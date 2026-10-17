@@ -1,0 +1,245 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+
+    background: #f3f6fb;
+
+    min-height: 100vh;
+
+    padding: 40px 20px;
+}
+
+
+.container {
+    width: 100%;
+    max-width: 650px;
+
+    margin: auto;
+}
+
+
+h1 {
+    text-align: center;
+
+    color: #222;
+
+    margin-bottom: 8px;
+}
+
+
+.subtitle {
+    text-align: center;
+
+    color: #777;
+
+    margin-bottom: 30px;
+}
+
+
+/* Form */
+
+#progressForm {
+    background: white;
+
+    padding: 25px;
+
+    border-radius: 15px;
+
+    box-shadow:
+        0 5px 20px rgba(0, 0, 0, 0.08);
+
+    margin-bottom: 30px;
+}
+
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+
+label {
+    display: block;
+
+    margin-bottom: 7px;
+
+    font-weight: bold;
+
+    color: #333;
+}
+
+
+input {
+    width: 100%;
+
+    padding: 12px;
+
+    border: 1px solid #ddd;
+
+    border-radius: 8px;
+
+    font-size: 15px;
+
+    outline: none;
+
+    transition: 0.3s;
+}
+
+
+input:focus {
+    border-color: #4f46e5;
+
+    box-shadow:
+        0 0 5px rgba(79, 70, 229, 0.2);
+}
+
+
+button {
+    width: 100%;
+
+    padding: 13px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background: #4f46e5;
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+
+button:hover {
+    background: #3730a3;
+
+    transform: translateY(-2px);
+}
+
+
+#responseMessage {
+    text-align: center;
+
+    margin-bottom: 20px;
+
+    font-weight: bold;
+}
+
+
+.success {
+    color: green;
+}
+
+
+h2 {
+    color: #222;
+
+    margin-bottom: 15px;
+}
+
+
+/* Progress Card */
+
+.progress-card {
+    background: white;
+
+    padding: 20px;
+
+    border-radius: 12px;
+
+    margin-bottom: 15px;
+
+    box-shadow:
+        0 4px 15px rgba(0, 0, 0, 0.07);
+
+    transition: 0.3s;
+}
+
+
+.progress-card:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+
+.progress-card h3 {
+    color: #4f46e5;
+
+    margin-bottom: 10px;
+}
+
+
+.progress-card p {
+    margin: 6px 0;
+
+    color: #555;
+}
+
+
+/* Progress bar */
+
+.progress-bar {
+    width: 100%;
+
+    height: 10px;
+
+    background: #e5e7eb;
+
+    border-radius: 10px;
+
+    overflow: hidden;
+
+    margin: 12px 0;
+}
+
+
+.progress-fill {
+    height: 100%;
+
+    background: #4f46e5;
+
+    border-radius: 10px;
+
+    transition: width 0.5s ease;
+}
+
+
+.date {
+    font-size: 12px;
+
+    color: #888 !important;
+}
+.view-progress {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 11px 22px;
+    background: white;
+    color: #4f46e5;
+    border: 2px solid #4f46e5;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.view-progress:hover {
+    background: #4f46e5;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.12);
+}

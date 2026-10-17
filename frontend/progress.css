@@ -1,0 +1,255 @@
+/* =========================
+   Basic Reset
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* =========================
+   Body
+========================= */
+
+body {
+    font-family: Arial, sans-serif;
+
+    background: #f4f7fb;
+
+    min-height: 100vh;
+
+    padding: 40px 20px;
+}
+
+
+/* =========================
+   Main Page
+========================= */
+
+.progress-page {
+    width: 100%;
+    max-width: 650px;
+
+    margin: auto;
+}
+
+
+/* =========================
+   Back Button
+========================= */
+
+.back-link {
+    display: inline-block;
+    padding: 9px 15px;
+    margin-top: 15px;
+    background: #4f46e5;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: bold;
+    transition: 0.3s ease;
+}
+
+
+/* Back Button Hover */
+
+.back-link:hover {
+    background: #3730a3;
+    transform: translateX(-4px);
+    box-shadow: 0 5px 12px rgba(79, 70, 229, 0.2);
+}
+
+
+/* =========================
+   Heading
+========================= */
+
+.progress-page h1 {
+    text-align: center;
+
+    color: #222;
+
+    font-size: 32px;
+
+    margin-bottom: 8px;
+}
+
+
+/* =========================
+   Subtitle
+========================= */
+
+.subtitle {
+    text-align: center;
+
+    color: #777;
+
+    margin-bottom: 30px;
+
+    font-size: 15px;
+}
+
+
+/* =========================
+   Progress List
+========================= */
+
+#progressList {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 15px;
+}
+
+
+/* =========================
+   Progress Card
+========================= */
+
+.progress-card {
+    background: white;
+
+    padding: 20px;
+
+    border-radius: 12px;
+
+    border: 1px solid #e3e6ef;
+
+    box-shadow:
+        0 4px 12px rgba(0, 0, 0, 0.06);
+
+    transition: 0.3s ease;
+}
+
+
+/* Card Hover */
+
+.progress-card:hover {
+    transform: translateY(-4px);
+
+    border-color: #4f46e5;
+
+    box-shadow:
+        0 8px 20px rgba(79, 70, 229, 0.15);
+}
+
+
+/* =========================
+   Student Name
+========================= */
+
+.progress-card h2 {
+    color: #4f46e5;
+
+    font-size: 20px;
+
+    margin-bottom: 12px;
+}
+
+
+/* =========================
+   Student Details
+========================= */
+
+.progress-card p {
+    color: #444;
+
+    font-size: 15px;
+
+    margin: 7px 0;
+}
+
+
+/* =========================
+   Progress Bar
+========================= */
+
+.progress-bar {
+    width: 100%;
+
+    height: 10px;
+
+    background: #e5e7eb;
+
+    border-radius: 10px;
+
+    overflow: hidden;
+
+    margin: 14px 0;
+}
+
+
+/* Progress */
+
+.progress-fill {
+    height: 100%;
+
+    background: #4f46e5;
+
+    border-radius: 10px;
+
+    transition: width 0.6s ease;
+}
+
+
+/* =========================
+   Date
+========================= */
+
+.date {
+    color: #888 !important;
+
+    font-size: 12px !important;
+
+    margin-top: 10px !important;
+}
+
+
+/* =========================
+   Empty Message
+========================= */
+
+.empty {
+    text-align: center;
+
+    color: #777;
+
+    padding: 30px;
+}
+
+
+/* =========================
+   Error Message
+========================= */
+
+.error {
+    text-align: center;
+
+    color: #dc2626;
+
+    padding: 20px;
+}
+
+
+/* =========================
+   Mobile
+========================= */
+
+@media (max-width: 600px) {
+
+    body {
+        padding: 25px 15px;
+    }
+
+    .progress-page h1 {
+        font-size: 27px;
+    }
+
+    .progress-card {
+        padding: 17px;
+    }
+}
