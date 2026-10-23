@@ -27,7 +27,8 @@ progressForm.addEventListener("submit", async (e) => {
     try {
 
         const response = await fetch(
-            "http://localhost:5000/progress",
+            "https://student-progress-tracker-api-cg0x.onrender.com/progress.html",
+            // "http://localhost:5000/progress",
             {
                 method: "POST",
 
