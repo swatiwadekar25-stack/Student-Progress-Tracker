@@ -1,80 +1,40 @@
-const progressList =
-    document.getElementById("progressList");
+const API_URL = "https://student-progress-tracker-api-cg0x.onrender.com/progress";
 
+const progressList = document.getElementById("progressList");
 
 async function getProgress() {
-
     try {
+        const response = await fetch(API_URL);
 
-        const response = await fetch(
-            "http://localhost:5000/progress"
-        );
+        if (!response.ok) {
+            throw new Error(`Server error: ${response.status}`);
+        }
 
-        const progress = await response.json();
+        const students = await response.json();
 
-        progressList.innerHTML = "";
+        if (!Array.isArray(students)) {
+            throw new Error("Unexpected response from backend");
+        }
 
-
-        if (progress.length === 0) {
-
-            progressList.innerHTML =
-                "<p class='empty'>No student progress found.</p>";
-
+        if (students.length === 0) {
+            progressList.textContent = "No student progress found.";
             return;
         }
 
-
-        progress.forEach((item) => {
-
-            const card =
-                document.createElement("div");
-
-            card.classList.add("progress-card");
-
-
-            card.innerHTML = `
-
-                <h2>👤 ${item.studentName}</h2>
-
-                <p>
-                    <strong>Course:</strong>
-                    ${item.courseName}
-                </p>
-
-                <p>
-                    <strong>Completion:</strong>
-                    ${item.completionPercentage}%
-                </p>
-
-                <div class="progress-bar">
-
-                    <div
-                        class="progress-fill"
-                        style="width: ${item.completionPercentage}%">
-                    </div>
-
-                </div>
-
-                <p class="date">
-                    Last Updated:
-                    ${new Date(item.lastUpdated).toLocaleString()}
-                </p>
-
-            `;
-
-            progressList.appendChild(card);
-
-        });
-
+        progressList.innerHTML = students.map(student => `
+            <div class="progress-card">
+                <h3>${student.studentName}</h3>
+                <p>Course: ${student.courseName}</p>
+                <p>Completion: ${student.completionPercentage}%</p>
+                <progress value="${student.completionPercentage}" max="100"></progress>
+            </div>
+        `).join("");
 
     } catch (error) {
-
-        console.log(error);
-
-        progressList.innerHTML =
-            "<p class='error'>Unable to load student progress.</p>";
+        console.error("Error loading progress:", error);
+        progressList.textContent =
+            "Unable to load student progress. Please try again.";
     }
 }
-
 
 getProgress();
